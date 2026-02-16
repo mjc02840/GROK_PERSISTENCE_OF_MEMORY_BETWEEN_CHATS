@@ -1,0 +1,12 @@
+[Unit]
+Description=Chat Persistence Fossil Watcher
+After=network.target
+
+[Service]
+WorkingDirectory=/var/www/html/GITHUB-STUFF/chat-persist-fossil
+ExecStart=/bin/bash -c 'exec ./chat-watcher.sh'
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
